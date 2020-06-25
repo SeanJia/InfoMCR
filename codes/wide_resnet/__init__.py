@@ -1,0 +1,1 @@
+from .wide_resnet import wide_resnet_28_2
