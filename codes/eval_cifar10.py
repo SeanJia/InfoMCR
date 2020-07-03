@@ -22,7 +22,6 @@ flags.DEFINE_integer('chunk_size', 10, 'chunk_size * num_chunk = batch_size.')
 flags.DEFINE_integer('num_chunk', 10, 'chunk_size * num_chunk = batch_size.')
 flags.DEFINE_integer('T', 100, 'Number of trials for computing gamma.')
 flags.DEFINE_string('model_id', None, 'Model string ID.')
-MODEL_BASE = '/home/zjia/Research/LocalMinV2/models/'
 MODEL_BASE = 'models'
 
 def get_model(num_class):
