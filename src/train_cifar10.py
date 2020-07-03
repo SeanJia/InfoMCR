@@ -23,6 +23,8 @@ flags.DEFINE_integer('num_sub_batch', 8, 'Number of sub-batch M.')
 flags.DEFINE_float('alpha', 1e-4, 'Coefficient for linear approaximation.')
 flags.DEFINE_float('beta', 10.0, 'Coefficient for local min reg.')
 flags.DEFINE_integer('type', 1, 'Type of regularizer variants.')
+flags.DEFINE_boolean('use_local_min_reg',
+                     False, 'Whether enable the proposed regularizer.')
 MODEL_BASE = 'models'
 
 
@@ -151,7 +153,7 @@ def main(args):
         test_accuracy(labels, predictions)
 
     for step in tqdm(range(int(FLAGS.num_epoch * iter_per_epoch))):
-        if use_reg(step, FLAGS.type, iter_per_epoch):
+        if FLAGS.use_local_min_reg and use_reg(step, FLAGS.type, iter_per_epoch):
             regularized_train_step(*next(train_data), FLAGS.beta)
         else:
             train_step(*next(train_data))
