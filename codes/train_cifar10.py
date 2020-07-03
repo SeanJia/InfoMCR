@@ -23,7 +23,6 @@ flags.DEFINE_integer('num_sub_batch', 8, 'Number of sub-batch M.')
 flags.DEFINE_float('alpha', 1e-4, 'Coefficient for linear approaximation.')
 flags.DEFINE_float('beta', 10.0, 'Coefficient for local min reg.')
 flags.DEFINE_integer('type', 1, 'Type of regularizer variants.')
-MODEL_BASE = '/home/zjia/Research/LocalMinV2/models/'
 MODEL_BASE = 'models'
 
 
