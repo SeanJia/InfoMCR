@@ -28,4 +28,4 @@ To evalute the proposed metric on models obtained with or without applying the r
 cd InfoMCR
 python3.6 codes/eval_cifar10.py --model_id=$MODEL_NAME
 ```
-### BibTex
+#### BibTex
