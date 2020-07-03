@@ -18,10 +18,10 @@ Recent advances in deep learning theory have evoked the study of generalizabilit
 numpy, tensorflow>=2.2, absl-py, tqdm
 ```
 ##### Examples
-To run the regularized SGD or the baseline on Wide ResNet for CIAFR-10, execute
+To run the regularized SGD (or the baseline) on Wide ResNet for CIAFR-10, execute
 ```
 cd InfoMCR
-python3.6 src/train_cifar10.py --model_id=$MODEL_NAME
+python3.6 src/train_cifar10.py --model_id=$MODEL_NAME --use_local_min_reg=True
 ```
 To evalute the proposed metric on models obtained with or without applying the regularizer, run
 ```
