@@ -20,8 +20,12 @@ numpy, tensorflow>=2.2, absl-py, tqdm
 ##### Examples
 To run the regularized SGD or the baseline on Wide ResNet for CIAFR-10, execute
 ```
+cd InfoMCR
+python3.6 codes/train_cifar10.py --model_id=$MODEL_NAME
 ```
 To evalute the proposed metric on models obtained with or without applying the regularizer, run
 ```
+cd InfoMCR
+python3.6 codes/eval_cifar10.py --model_id=$MODEL_NAME
 ```
 ### BibTex
