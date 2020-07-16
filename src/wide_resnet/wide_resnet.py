@@ -22,7 +22,7 @@ class WideResNet(tf.keras.Model):
             num_filter3, num_block, l2_reg, downsample=True)
         self.fc = layers.Dense(num_class)
 
-    def call(self, x, training=None, mask=None):
+    def call(self, x, training=False):
         x = self.first_layer_conv(x)
         x = self.layer1(x, training=training)
         x = self.layer2(x, training=training)
