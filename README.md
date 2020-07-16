@@ -18,7 +18,7 @@ Recent advances in deep learning theory have evoked the study of generalizabilit
 numpy, tensorflow>=2.2, absl-py, tqdm
 ```
 ##### Examples
-To run the regularized SGD (or the baseline) on Wide ResNet for CIAFR-10, execute
+To run the regularized SGD (or the baseline) on Wide ResNet for CIFAR-10, execute
 ```bash
 cd InfoMCR
 python src/train_cifar10.py --model_id=$MODEL_NAME --use_local_min_reg=True
@@ -27,5 +27,9 @@ To evalute the proposed metric on models obtained with or without applying the r
 ```bash
 cd InfoMCR
 python src/eval_cifar10.py --model_id=$MODEL_NAME
+```
+Notice that, as mentioned in the paper, to compute and compare the proposed metric on local minima obtained with or without applying the regularizer, we normlize each softmax prediction to satisfy the assumption that all local minima in comparison are of similarly small training loss. This is achieved by the following line in `src/eval_cifar10.py`:
+```Python
+predictions /= tf.expand_dims(tf.linalg.norm(predictions, axis=-1), 1) * scale
 ```
 #### BibTex
