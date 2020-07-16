@@ -34,3 +34,6 @@ predictions /= tf.expand_dims(tf.linalg.norm(predictions, axis=-1), 1) * scale
 ```
 When computing our metric to compare different local minima in other experiments (different batch size, data aug., etc.), we don't perform this operation as the assumption already holds. 
 #### BibTex
+
+#### Contact
+I can be reached by zjia@{ucsd.edu, eng.ucsd.edu}.
